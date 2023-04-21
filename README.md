@@ -1,4 +1,5 @@
 # Pass-Inspector
+
 This command line Python script checks if a password has been leaked in a database.
 
 ## Usage
@@ -11,9 +12,9 @@ This command line Python script checks if a password has been leaked in a databa
 
 3. Run the script and pass in one or more passwords as arguments
 
-For instance, 
+For instance,
 
-`python3 check_pass password1 password2 ...` 
+`python3 check_pass.py password1 password2 ...`
 
 4. The script will check each password and output a message indicating whether it has been found in a database leak or not (and how many times if so).
 
