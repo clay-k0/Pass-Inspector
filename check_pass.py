@@ -13,8 +13,7 @@ def request_api_data(query_char):
     url = f'https://api.pwnedpasswords.com/range/{query_char}'
     response = requests.get(url)
     if response.status_code != 200:
-        raise RuntimeError(f"Error fetching {response.status_code} from the API."
-                           f"Check the API and try again.")
+        raise RuntimeError(f"{response.status_code}: Error fetching API")
     return response
 
 
@@ -31,13 +30,13 @@ def check_pwned_api(password):
 
 
 def main(args):
-    print('Password Checker:\n')
+    print('----------Password Checker----------\n')
     for password in args:
         if count := check_pwned_api(password):
-            print(f'{password} was found {count} times... consider changing it.')
+            print(f'{password} was found {count} times...')
         else:
             print(f'All good, {password} was not found!')
-    print('\nDone!')
+    print('\n------------------------------------')
     return 0
 
 
